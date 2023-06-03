@@ -33,7 +33,7 @@ const handleError = (err) => {
 export const login = async (dispatch, user) => {
 	dispatch(loginStart());
 	try {
-		const res = await axios.post("/auth/login", user);
+		const res = await axios.post(process.env.REACT_APP_BACKEND_URL + "auth/login", user);
 		dispatch(loginSuccess(res.data));
 	} catch (err) {
 		handleError(err);
@@ -44,7 +44,10 @@ export const login = async (dispatch, user) => {
 export const register = async (dispatch, user) => {
 	dispatch(loginStart());
 	try {
-		const res = await axios.post("/auth/register", user);
+		const res = await axios.post(
+			process.env.REACT_APP_BACKEND_URL + "/auth/register",
+			user
+		);
 		showPopup("success", res.data.message);
 		dispatch(loginFailure());
 	} catch (err) {

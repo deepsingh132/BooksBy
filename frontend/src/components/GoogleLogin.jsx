@@ -38,7 +38,7 @@ const Login = () => {
         };
         if (token) {
           const res = await axios.post(
-            "http://192.168.0.229:5000/auth/login/verify-token",
+            process.env.REACT_APP_BACKEND_URL + "auth/login/verify-token",
             {},
             config
           );

@@ -177,7 +177,9 @@ const Institute = () => {
     else {
       const fetchData = async () => {
         try {
-          const res = await axios.get(`/institute/${query}`);
+          const res = await axios.get(
+						process.env.REACT_APP_BACKEND_URL + `institute/${query}`
+					);
           setData(res.data);
           setCourses(res.data.courses);
           if (!filters && res.data.courses) {

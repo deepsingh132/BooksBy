@@ -1,5 +1,5 @@
 {
-  "name": "new",
+  "name": "booksby",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -54,7 +54,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://192.168.0.229:5000/api/",
+  "proxy": "http://localhost:5000",
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "babel-plugin-styled-components": "^2.1.1",
