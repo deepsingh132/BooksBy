@@ -1,5 +1,5 @@
 <div
-align="center"><img src="./src/icon/appicon.svg" width="300"></div>
+align="center"><img src="./frontend/src/icon/appicon.svg" width="300"></div>
 
 <br>
 
