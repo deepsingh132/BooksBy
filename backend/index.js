@@ -10,6 +10,8 @@ const routes = require("./routes/index");
 const passportMiddleware = require("./middlewares/passport");
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
+
 mongoose.set('strictQuery', false);
 mongoose.promise = global.Promise;
 
@@ -23,7 +25,7 @@ mongoose
     console.log(err);
   });
 
-app.use(cors());
+
 
 app.use("/api/checkout/webhook", express.raw({ type: "*/*" }));
 

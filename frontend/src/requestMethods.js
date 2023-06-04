@@ -4,7 +4,8 @@ const BASE_URL =
 
 
 export const publicRequest = axios.create({
-  baseURL: BASE_URL,
+	baseURL: BASE_URL,
+	withCredentials: true,
 });
 
 export const userRequest = (token) => axios.create({
