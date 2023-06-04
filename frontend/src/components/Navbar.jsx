@@ -265,13 +265,11 @@ const Navbar = () => {
 
 									<li className="center signout">
 										<MenuItem style={{alignItems: "center"}} onClick={() => handleLogout()}>
-											{user ? (
+											{user && (
 											<StyledLink>
 												Sign Out
 											</StyledLink>
-										) : (
-												<StyledLink data-testid="Sign In">Sign In</StyledLink>
-											)}
+										) }
 											<Logout style={{ color: "#fff", alignSelf: "center" }} />
 										</MenuItem>
 										</li>

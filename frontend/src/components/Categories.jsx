@@ -16,12 +16,12 @@ const Container = styled.div`
   justify-content: space-between;
   ${mobile({
     padding: "0px",
-    height: "auto",
+    maxHeight: "30vh",
+    marginBottom: "0px",
   })}
 
   @media screen and (min-width: 768px) {
     width: auto;
-    padding: 40px;
     justify-content: center;
     align-items: center;
   }

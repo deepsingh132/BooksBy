@@ -50,6 +50,8 @@ BooksBy aims to create a user-friendly and efficient platform for students and a
 
   Stripe Integration enables secure and seamless online payments by integrating the Stripe payment gateway into the e-commerce platform. This feature ensures that customers can make payments efficiently and securely, promoting a smooth transaction process.
 
+  Note: Please refer to the [Stripe webhook](https://stripe.com/docs/webhooks/) documentation for detailed instructions on how to configure and deploy a webhook to listen for Stripe events, fulfill orders, and securely save them in a database.
+
 - ### 🛒 Cart
 
   The Cart feature allows users to add products to their shopping cart while browsing the website. It provides a convenient way for customers to keep track of their selected items and proceed to the checkout process when ready. The cart feature enhances the user experience by enabling easy management of selected products.
@@ -107,7 +109,6 @@ BooksBy aims to create a user-friendly and efficient platform for students and a
 <br>
 
 ## Screenshots
-
 
 <table>
   <thead>
@@ -260,6 +261,20 @@ BooksBy aims to create a user-friendly and efficient platform for students and a
       <td>
         <img
           src="./Screenshots/Mobile/orders.png"
+          width="200"
+        />
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <img
+          src="./Screenshots/carousel.png"
+          width="400"
+        />
+      </td>
+      <td>
+        <img
+          src="./Screenshots/Mobile/register.png"
           width="200"
         />
       </td>

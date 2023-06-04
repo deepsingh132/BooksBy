@@ -9,8 +9,8 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   ${mobile({
-    height: "20vh",
     maxWidth: "200px",
+    maxHeight: "25vh",
   })}
 `;
 
@@ -20,16 +20,10 @@ const Image = styled.img`
 	object-fit: contain;
 	max-width: 100%;
 	max-height: 100%;
-	${mobile({
-		maxWidth: "200px",
-		maxHeight: "20vh",
-		objectFit: "cover",
-		// height: "30vh",
-		// maxHeight: "40vh",
-		// objectFit: "cover",
-		// width: "100%",
-		// maxWidth: "200px"
-	})}
+  ${mobile({
+    maxWidth: "200px",
+    maxHeight: "20vh",
+  })}
 `;
 
 const TextContainer = styled.div`
@@ -42,10 +36,10 @@ const TextContainer = styled.div`
 
 const Title = styled.h1`
   color: #000;
-  font-size: x-large;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   text-align: center;
-  ${mobile({ fontSize: "20px" })}
+  ${mobile({ fontSize: "1rem" })}
 `;
 
 const CategoryItem = ({ item }) => {
