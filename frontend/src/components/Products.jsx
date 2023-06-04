@@ -9,6 +9,7 @@ import "../components/Styles/carousel.css";
 import { Carousel } from "./Carousel";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
+import axios from "axios";
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -82,11 +83,13 @@ const Products = ({ cat, type, books }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await publicRequest.get(
-          books
-            ? `products?ids=${books.join(",")}`
-            : "products"
-        );
+        const res = await axios.get(
+					books
+						? `https://booksby.up.railway.app/api/products?ids=${books.join(
+								","
+						  )}`
+						: "https://booksby.up.railway.app/api/products"
+				);
         setProducts(res.data);
       } catch (err) {
         showPopup("error", "Something went wrong");

@@ -5,6 +5,7 @@ import { mobile } from "../responsive";
 import { publicRequest } from "../requestMethods";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
+import axios from "axios";
 
 const Container = styled.div`
 	width: 100%;
@@ -190,7 +191,9 @@ const Slider = () => {
 	useEffect(() => {
 		const getSlider = async () => {
 			try {
-				const response = await publicRequest.get("/products/slider");
+				const response = await axios.get(
+					"https://booksby.up.railway.app/api/products/slider"
+				);
 				setSlides(response.data);
 			} catch (error) {
 				showPopup("error", "Something went wrong");

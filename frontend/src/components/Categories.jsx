@@ -5,6 +5,7 @@ import { publicRequest } from "../requestMethods";
 import CategoryItem from "./CategoryItem";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -43,7 +44,9 @@ const Categories = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const res = await publicRequest.get("products/categories");
+        const res = await axios.get(
+					"https://booksby.up.railway.app/api/products/categories"
+				);
         setCategories(res.data);
       } catch (error) {
         showPopup("error", "Something went wrong. Please try again later.");
