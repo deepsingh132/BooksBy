@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 import ProductCard from "./ProductCard";
-import { publicRequest } from "../requestMethods";
+// import { publicRequest } from "../requestMethods";
 import { mobile } from "../responsive";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import "../components/Styles/carousel.css";

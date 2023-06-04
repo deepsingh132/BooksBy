@@ -2,7 +2,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import { publicRequest } from "../requestMethods";
+// import { publicRequest } from "../requestMethods";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
 import axios from "axios";
