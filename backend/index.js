@@ -23,20 +23,7 @@ mongoose
     console.log(err);
   });
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  process.env.FRONTEND_URL,
-];
-
-console.log("Allowed Origins: ", allowedOrigins);
-
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors());
 
 app.use("/api/checkout/webhook", express.raw({ type: "*/*" }));
 
