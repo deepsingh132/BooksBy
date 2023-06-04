@@ -178,7 +178,7 @@ const Institute = () => {
       const fetchData = async () => {
         try {
           const res = await axios.get(
-						process.env.REACT_APP_BACKEND_URL + `institute/${query}`
+						process.env.REACT_APP_BACKEND_URL + `/institute/${query}`
 					);
           setData(res.data);
           setCourses(res.data.courses);

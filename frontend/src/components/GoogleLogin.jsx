@@ -38,7 +38,7 @@ const Login = () => {
         };
         if (token) {
           const res = await axios.post(
-            process.env.REACT_APP_BACKEND_URL + "auth/login/verify-token",
+            process.env.REACT_APP_BACKEND_URL + "/auth/login/verify-token",
             {},
             config
           );
@@ -54,7 +54,7 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    window.open(process.env.REACT_APP_BACKEND_URL + "auth/google" , "_self");
+    window.open(process.env.REACT_APP_BACKEND_URL + "/auth/google" , "_self");
   };
 
   return (

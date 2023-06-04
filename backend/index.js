@@ -29,9 +29,7 @@ mongoose
     console.log(err);
   });
 
-
-
-app.use("/api/checkout/webhook", express.raw({ type: "*/*" }));
+app.use("/api/checkout/webhook", express.raw({ type: "*/*" })); // for parsing application/json stripe webhook payload
 
 app.use(express.json());
 
