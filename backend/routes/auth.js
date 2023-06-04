@@ -7,6 +7,7 @@ const validate = require('../middlewares/validate');
 const passport = require('passport');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const { FRONTEND_URL } = process.env;
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
@@ -36,7 +37,7 @@ router.get(
   }),
   (req, res) => {
     const { token } = req.user;
-        res.redirect(process.env.FRONTEND_URL + `/login?token=${token}`);
+        res.redirect(FRONTEND_URL + `/login?token=${token}`);
     // res.redirect(`http://localhost:3000/login?user=${req.user}`);
     /**
      * @TODO Redirect user to frontend client URL with the jwt token attached as a query parameter instead of the current response.

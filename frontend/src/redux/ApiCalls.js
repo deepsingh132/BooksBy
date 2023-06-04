@@ -14,9 +14,9 @@ const showPopup = (msgType, msg) => {
   };
 
 const handleError = (err) => {
-	switch (err.response.status) {
+	switch (err?.response?.status) {
 		case 401: {
-			showPopup("warning", err.response.data.message? err.response.data.message : err.response.data.msg);
+			showPopup("warning", err.response.data?.message? err.response.data.message : err.response.data.msg);
 			break;
 		}
 		case 422: {
@@ -24,7 +24,7 @@ const handleError = (err) => {
 			break;
 		}
 		default: {
-			showPopup("error", "Something went wrong: " +  err.response.data.message);
+			showPopup("error", "Something went wrong: " +  err.response.data?.message);
 			break;
 		}
 	}
@@ -33,11 +33,11 @@ const handleError = (err) => {
 export const login = async (dispatch, user) => {
 	dispatch(loginStart());
 	try {
-		const res = await axios.post(process.env.REACT_APP_BACKEND_URL + "auth/login", user);
+		const res = await axios.post(process.env.REACT_APP_BACKEND_URL + "auth/login",user);
 		dispatch(loginSuccess(res.data));
 	} catch (err) {
-		handleError(err);
 		dispatch(loginFailure());
+		handleError(err);
 	}
 };
 
@@ -48,10 +48,10 @@ export const register = async (dispatch, user) => {
 			process.env.REACT_APP_BACKEND_URL + "/auth/register",
 			user
 		);
+		dispatch(loginFailure());
 		showPopup("success", res.data.message);
-		dispatch(loginFailure());
 	} catch (err) {
-		handleError(err);
 		dispatch(loginFailure());
+		handleError(err);
     }
 };

@@ -4,6 +4,7 @@ import { Suspense, lazy, useMemo} from "react";
 import { removeAllProducts } from "./redux/cartRedux";
 import "./components/Styles/app.css";
 import LoadingOverlay from "./components/SpinnerOverlay";
+import { loginFailure } from "./redux/userRedux";
 
 const Home = lazy(() => import("./pages/Home"));
 const Product = lazy(() => import("./pages/Product"));
@@ -26,25 +27,19 @@ const App = () => {
   }, [user, localUser]);
   const token = currentUser?.token;
   const quantity = useSelector((state) => state.cart.quantity);
+  const error = useSelector((state) => state.cart.error);
+  const isFetching = useSelector((state) => state.cart.isFetching);
   const dispatch = useDispatch();
 
   if (!user && quantity > 0) {
     dispatch(removeAllProducts());
   }
 
-//   useEffect(() => {
-//   const testRequest = async () => {
-//     try {
-//       await fetch("https://www.google.com", { mode: "no-cors" });
-//       setIsNetworkError(false);
-//     } catch (error) {
-//       setIsNetworkError(true);
-//     }
-//   };
-
-//   testRequest();
-// }, []);
-
+  useMemo(() => {
+    if (error && isFetching) {
+      dispatch(loginFailure());
+    }
+  }, [error, isFetching, dispatch]);
   return (
         <BrowserRouter>
           <Routes>

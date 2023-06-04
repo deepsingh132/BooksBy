@@ -10,7 +10,11 @@ const routes = require("./routes/index");
 const passportMiddleware = require("./middlewares/passport");
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://booksby.up.railway.app"],
+  })
+);
 
 mongoose.set('strictQuery', false);
 mongoose.promise = global.Promise;

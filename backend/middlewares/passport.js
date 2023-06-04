@@ -5,7 +5,6 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require("passport");
 const GoogleUser = require("../models/GoogleUser");
 const User = require("../models/User");
-require('dotenv').config();
 const createJWT = require('./createJWT');
 
 const generateUsername = (name) => {

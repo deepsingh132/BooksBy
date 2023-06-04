@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 import ProductCard from "./ProductCard";
-// import { publicRequest } from "../requestMethods";
 import { mobile } from "../responsive";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import "../components/Styles/carousel.css";
 import { Carousel } from "./Carousel";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
-import axios from "axios";
+import { publicRequest } from "../requestMethods";
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -83,12 +82,12 @@ const Products = ({ cat, type, books }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get(
+        const res = await publicRequest.get(
 					books
-						? `https://booksby.up.railway.app/api/products?ids=${books.join(
+						? `products?ids=${books.join(
 								","
 						  )}`
-						: "https://booksby.up.railway.app/api/products"
+						: "products"
 				);
         setProducts(res.data);
       } catch (err) {

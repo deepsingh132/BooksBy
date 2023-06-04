@@ -2,10 +2,9 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-// import { publicRequest } from "../requestMethods";
 import { createRoot } from "react-dom/client";
 import Modal from "./Modal";
-import axios from "axios";
+import { publicRequest } from "../requestMethods";
 
 const Container = styled.div`
 	width: 100%;
@@ -191,9 +190,8 @@ const Slider = () => {
 	useEffect(() => {
 		const getSlider = async () => {
 			try {
-				const response = await axios.get(
-					"https://booksby.up.railway.app/api/products/slider"
-				);
+				const response = await publicRequest.get(
+					"products/slider");
 				setSlides(response.data);
 			} catch (error) {
 				showPopup("error", "Something went wrong");
@@ -201,6 +199,7 @@ const Slider = () => {
 		};
 		getSlider();
 	}, []);
+
 
 	const handleClick = (direction) => {
 		if (direction === "left") {
