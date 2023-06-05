@@ -52,6 +52,19 @@ BooksBy aims to create a user-friendly and efficient platform for students and a
 
   Note: Please refer to the [Stripe webhook](https://stripe.com/docs/webhooks/) documentation for detailed instructions on how to configure and deploy a webhook to listen for Stripe events, fulfill orders, and securely save them in a database.
 
+  For testing the order functionality:
+
+    1. Use the card number: `4242 4242 4242 4242`
+    2. For the CVV / security code, enter any random 3-digit number.
+    3. Enter any future date for the expiry date.
+    4. If you want to test the email confirmation of the order, provide a valid email address.
+    5. Proceed with the checkout process using the provided test card details.
+    6. Upon successful checkout, you will be redirected to the success page.
+    7. From the success page, you can navigate to the order details page to view detailed information about the order.
+
+  This testing method allows you to simulate a successful order and explore the order details in your application.
+
+
 - ### 🛒 Cart
 
   The Cart feature allows users to add products to their shopping cart while browsing the website. It provides a convenient way for customers to keep track of their selected items and proceed to the checkout process when ready. The cart feature enhances the user experience by enabling easy management of selected products.

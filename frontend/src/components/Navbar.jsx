@@ -262,22 +262,17 @@ const Navbar = () => {
 											<StyledLink>Cart</StyledLink>
 										</MenuItem>
 									</li>
-
+									{user && (
 									<li className="center signout">
 										<MenuItem style={{alignItems: "center"}} onClick={() => handleLogout()}>
-											{user && (
 											<StyledLink>
 												Sign Out
 											</StyledLink>
-										) }
 											<Logout style={{ color: "#fff", alignSelf: "center" }} />
 										</MenuItem>
-										</li>
-
-
-
+									</li>
+										)}
 								</ul>
-
 								<Right></Right>
 							</div>
 						</div>
