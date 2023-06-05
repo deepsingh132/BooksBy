@@ -36,7 +36,6 @@ const opts = {
         try {
           // Check if user with Google ID already exists in database
           let googleUser = await GoogleUser.findOne({ profileId: profile.id });
-          let jwt;
           if (!googleUser) {
             // If user does not exist, create new user
             googleUser = new GoogleUser({
@@ -48,13 +47,8 @@ const opts = {
             });
             await googleUser.save();
 
-            jwt = {
-              id: googleUser._id,
-              isAdmin: googleUser.isAdmin
-            }
-
             const { profileId, ...others } = googleUser._doc;
-            const token = createJWT(jwt);
+            const token = createJWT(others);
             return done(null, { token: token, user: { ...others } });
           }
           // If user already exists, return user object
