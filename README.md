@@ -3,10 +3,12 @@ align="center"><img src="./frontend/src/icon/appicon.svg" width="300"></div>
 
 <br>
 
-# BooksBy - A MERN Full Stack E-commerce Project
+# BooksBy - A MERN Full Stack E-commerce Project 
 
+![example workflow](https://github.com/deepsingh132/booksby/actions/workflows/node.js.yml/badge.svg) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
- [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) ![downloads](https://img.shields.io/github/downloads/deepsingh132/booksby/total)
+
 
 Welcome to the readme for the MERN (MongoDB, Express, React, Node.js) full-stack e-commerce project named BooksBy (stemmed from BooksBuy pronounced Books-Bee). This project is focused on developing an e-commerce website that specializes in selling books based on students' schools, colleges, and other institutions. The website provides a comprehensive search functionality that allows users to find books by their titles, and also displays relevant school information and the books used in the school's curriculum, if applicable.
 
