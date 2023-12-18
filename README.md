@@ -1,5 +1,9 @@
-<div
-align="center"><img src="./frontend/src/icon/appicon.svg" width="300"></div>
+<div align="center">
+<!-- <img src="./frontend/src/icon/appicon.svg" width="300"> -->
+<img src="./Screenshots/desktophome.png" alt="desktop-home" height="200"/>
+</div>
+
+
 
 <br>
 
