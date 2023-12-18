@@ -7,7 +7,7 @@
 
 <br>
 
-# BooksBy - A MERN Full Stack E-commerce Project 
+# BooksBy - A MERN Full Stack E-commerce Platform
 
 ![example workflow](https://github.com/deepsingh132/booksby/actions/workflows/node.js.yml/badge.svg) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) 
