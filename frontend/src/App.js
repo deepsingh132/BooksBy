@@ -5,12 +5,12 @@ import { removeAllProducts } from "./redux/cartRedux";
 import "./components/Styles/app.css";
 import LoadingOverlay from "./components/SpinnerOverlay";
 import { loginFailure } from "./redux/userRedux";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
 
-const Home = lazy(() => import("./pages/Home"));
 const Product = lazy(() => import("./pages/Product"));
 const ProductList = lazy(() => import("./pages/ProductList"));
-const Register = lazy(() => import("./pages/Register"));
-const Login = lazy(() => import("./pages/Login"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Success = lazy(() => import("./pages/Success"));
 const OrderDetails = lazy(() => import("./pages/OrderDetails"));
@@ -99,12 +99,10 @@ const App = () => {
                 </Suspense>
               }
             />
-            <Route
-              path="/login"
-              element={
-                <Suspense fallback={<LoadingOverlay />}>
-                  {user ? <Navigate to="/" /> : <Login />}
-                </Suspense>
+        <Route
+          path="/login"
+          element={
+            user ? <Navigate to = "/" /> : <Login />
               }
             />
             <Route
@@ -118,9 +116,7 @@ const App = () => {
             <Route
               path="/register"
               element={
-                <Suspense fallback={<LoadingOverlay />}>
-                  {user ? <Navigate to="/" /> : <Register />}
-                </Suspense>
+                  user ? <Navigate to = "/" /> : <Register />
               }
               />
               <Route
