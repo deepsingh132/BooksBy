@@ -100,9 +100,16 @@ const Cart = ({user,token}) => {
 			setIsFetching(true);
 
 			const stripeIds = cart.products.map((product) => ({
-				productId: product.id,
+				productId: product?.id,
 				quantity: product.quantity,
 			})); // get the product IDs from the Redux store to send to the backend for creating a Stripe session
+
+			// if any of the stripeIds does not have the id property, then show an error message
+			if (stripeIds.some((stripeId) => !stripeId?.productId)) {
+				setIsFetching(false);
+				showPopup("warning", "Some products in your cart are not registered with Stripe. Please remove them and try again");
+				return;
+			}
 
 			/**
 			 * TODO: Instead of sending the following product details as metadata to create the order, retreive the product details from the stripe checkout line items directly

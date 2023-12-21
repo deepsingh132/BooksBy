@@ -79,6 +79,7 @@ router.post("/create-checkout-session", async (req, res) => {
     res.send(session.url);
 
   } catch (error) {
+    console.error("Error creating checkout session: ", error);
     res.status(500).send("Internal Server Error!");
   }
 });
@@ -94,6 +95,7 @@ router.get("/order/success", async (req, res) => {
     result.orderID = orderId._id;
     res.status(200).send(result);
   } catch (error) {
+    console.error("Error fetching order: ", error);
     res.status(500).send(error);
   }
 });
@@ -109,7 +111,7 @@ const fulfillOrder = async (orderDetails) => {
     session.invoicePdf = invoice?.invoice_pdf || null;
     await createOrder(session);
   } catch (error) {
-    console.log("Error fulfilling order: ", error);
+    console.error("Error fulfilling order: ", error);
   }
 };
 
@@ -119,14 +121,15 @@ router.post("/webhook", async (req, res) => {
 
   const payload = req.body;
   const sig = req.headers["stripe-signature"];
+  console.log("Webhook accessed")
 
     let event;
 
     try {
       event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
     } catch (err) {
-      console.log("WebHooka Error: ", err);
-      return res.status(400).send(`Webhook Error: ${err.message}`);
+      console.error("WebHooka Error: ", err);
+      return res.status(400).send(`Webhook Error: ${err?.message}`);
     }
 
   switch (event.type) {
