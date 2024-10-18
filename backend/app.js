@@ -7,8 +7,18 @@ const MongoStore = require('connect-mongo');
 const cors = require("cors");
 const session = require("express-session");
 const errorMiddleware = require("./middlewares/error");
-const routes = require("./routes/index");
 const passportMiddleware = require("./middlewares/passport");
+
+// routes
+const auth = require("./routes/auth");
+const user = require("./routes/user");
+const productRoute = require("./routes/product");
+const institutionRoute = require("./routes/institution");
+const cartRoute = require("./routes/cart");
+const orderRoute = require("./routes/order");
+const stripeRoute = require("./routes/stripe");
+const verifyUserRoute = require('./routes/verifyUser');
+
 const FRONTEND_URL = process.env.FRONTEND_URL
 const PORT = process.env.PORT || 5000;
 
@@ -50,9 +60,28 @@ app.use(errorMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 passportMiddleware(passport);
-routes(app);
+
+app.get("/", (req, res) => {
+  res.status(200).send({
+    message:
+      "Welcome to the BooksBy API",
+  });
+});
+
+// Routes
+app.use("/api/verify-user", verifyUserRoute);
+app.use("/api/checkout", stripeRoute);
+app.use("/auth", auth);
+app.use("/api/auth", auth);
+app.use("/api/users", user);
+app.use("/api/products", productRoute);
+app.use("/api/institute", institutionRoute);
+app.use("/api/carts", cartRoute);
+app.use("/api/orders", orderRoute);
 
 
 app.listen(PORT, () => {
 	console.log("Backend server is running at: " + PORT);
 });
+
+module.exports = app;
