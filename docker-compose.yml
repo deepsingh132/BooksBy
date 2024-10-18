@@ -1,0 +1,33 @@
+services:
+  backend:
+    env_file: ./backend/.env
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    environment:
+      - NODE_ENV=production
+      - FRONTEND_URL=${FRONTEND_URL}
+    volumes:
+      - ./backend:/app
+    networks:
+      - booksby-network
+
+  frontend:
+    env_file: ./frontend/.env
+    build:
+      context: ./frontend
+      args:
+        - REACT_APP_BACKEND_URL
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    environment:
+      - NODE_ENV=production
+    networks:
+      - booksby-network
+
+networks:
+  booksby-network:
+    driver: bridge
