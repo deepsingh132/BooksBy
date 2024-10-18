@@ -2,9 +2,10 @@
   "name": "ecommerceapi",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js",
+    "vercel-build": "echo helloworld"
   },
   "keywords": [],
   "author": "",

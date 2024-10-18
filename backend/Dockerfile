@@ -21,4 +21,4 @@ EXPOSE 5000
 RUN chown -R node /app
 
 USER node
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
