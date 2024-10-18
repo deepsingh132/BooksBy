@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["https://booksby.onrender.com", FRONTEND_URL],
+    origin: ["https://booksby.onrender.com", FRONTEND_URL, "http://localhost"],
   })
 );
 
