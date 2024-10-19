@@ -9,7 +9,8 @@
 
 # BooksBy - A MERN Full Stack E-commerce Platform
 
-![example workflow](https://github.com/deepsingh132/booksby/actions/workflows/node.js.yml/badge.svg) 
+![Build](https://github.com/deepsingh132/booksby/actions/workflows/node.js.yml/badge.svg) 
+[![Build and Push Docker Images](https://github.com/deepsingh132/BooksBy/actions/workflows/docker-publish-images.yml/badge.svg)](https://github.com/deepsingh132/BooksBy/actions/workflows/docker-publish-images.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
